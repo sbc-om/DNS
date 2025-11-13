@@ -147,7 +147,7 @@ export default async function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
-              <div className="flex justify-center mb-4"><FaLock className="text-5xl text-blue-600 dark:text-blue-400" /></div>
+              <div className="text-4xl mb-4">�</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Secure & Private</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Enterprise-grade security with encrypted data storage and secure authentication.
@@ -155,7 +155,7 @@ export default async function Home() {
             </div>
 
             <div className="text-center p-6">
-              <div className="flex justify-center mb-4"><FaBolt className="text-5xl text-yellow-600 dark:text-yellow-400" /></div>
+              <div className="text-4xl mb-4">⚡</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Fast & Reliable</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Lightning-fast performance powered by modern technology and optimized databases.
@@ -163,7 +163,7 @@ export default async function Home() {
             </div>
 
             <div className="text-center p-6">
-              <div className="flex justify-center mb-4"><FaBullseye className="text-5xl text-red-600 dark:text-red-400" /></div>
+              <div className="text-4xl mb-4">�</div>
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Easy to Use</h3>
               <p className="text-gray-600 dark:text-gray-400">
                 Intuitive interface designed for users of all technical skill levels.
@@ -197,7 +197,43 @@ export default async function Home() {
         </div>
       </section>
 
-      <Footer />
+      {/* Footer */}
+      <footer className="bg-gray-900 dark:bg-black text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">DNS</h3>
+              <p className="text-gray-400">
+                Transforming education through technology.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Product</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/about" className="hover:text-white">About</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Account</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/login" className="hover:text-white">Sign In</Link></li>
+                <li><Link href="/register" className="hover:text-white">Register</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Support</h4>
+              <ul className="space-y-2 text-gray-400">
+                <li><Link href="/contact" className="hover:text-white">Help Center</Link></li>
+                <li><Link href="/contact" className="hover:text-white">Contact Support</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; {new Date().getFullYear()} DNS Learning System. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -1,36 +1,114 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DNS - Learning Management System
+
+A comprehensive learning management system built with Next.js, TypeScript, and LMDB database.
+
+## Features
+
+- 🔐 **Authentication System** - Secure login and registration with JWT
+- 👥 **Multi-Role Support** - Four user roles: Admin, Coach, Parents, Students
+- 💾 **LMDB Database** - Fast, lightweight embedded database
+- 🎨 **Modern UI** - Built with shadcn/ui and Tailwind CSS
+- 🔒 **Password Security** - Bcrypt password hashing
+- ✅ **Data Validation** - Zod schema validation
+
+## User Roles
+
+1. **Admin** - Manage users, view reports, configure system settings
+2. **Coach** - Track student progress, assign tasks, manage schedules
+3. **Parents** - Monitor children's learning, communicate with coaches
+4. **Students** - Access assignments, track progress, view achievements
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and update the `JWT_SECRET` with a secure random string.
+
+4. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+DNS/
+├── src/
+│   ├── app/
+│   │   ├── api/auth/          # Authentication API routes
+│   │   ├── login/             # Login page
+│   │   ├── register/          # Registration page
+│   │   ├── dashboard/         # Main dashboard
+│   │   └── page.tsx           # Home page
+│   ├── components/ui/         # shadcn/ui components
+│   └── lib/
+│       ├── auth.ts            # Authentication utilities
+│       └── db/                # Database layer
+│           ├── lmdb.ts        # LMDB configuration
+│           ├── schema.ts      # Data schemas
+│           └── user.model.ts  # User model
+├── data/                      # LMDB database files (auto-generated)
+└── public/                    # Static assets
+```
 
-## Learn More
+## API Endpoints
 
-To learn more about Next.js, take a look at the following resources:
+### Authentication
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `POST /api/auth/register` - Register a new user
+- `POST /api/auth/login` - Login user
+- `POST /api/auth/logout` - Logout user
+- `GET /api/auth/session` - Get current session
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Database
 
-## Deploy on Vercel
+The application uses LMDB (Lightning Memory-Mapped Database), a high-performance embedded database. Data is stored in the `data/` directory (excluded from git).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technologies
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework**: Next.js 15 with App Router
+- **Language**: TypeScript
+- **Database**: LMDB
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Authentication**: JWT with jose
+- **Password Hashing**: bcryptjs
+- **Validation**: Zod
+
+## Development
+
+```bash
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+
+# Lint code
+npm run lint
+```
+
