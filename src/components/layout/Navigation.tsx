@@ -1,6 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { FaGraduationCap } from 'react-icons/fa';
 
 export default function Navigation() {
   return (
@@ -9,7 +9,13 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <FaGraduationCap className="text-3xl text-blue-600 dark:text-blue-400" />
+              <Image 
+                src="/logo.png" 
+                alt="DNS Logo" 
+                width={40} 
+                height={40}
+                className="object-contain"
+              />
               <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">DNS</span>
               <span className="hidden sm:block text-gray-600 dark:text-gray-400">Learning System</span>
             </Link>
